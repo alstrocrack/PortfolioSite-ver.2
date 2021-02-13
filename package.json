@@ -18,6 +18,8 @@
   "homepage": "https://github.com/YutoUrushima/PortfolioSite-ver.2#readme",
   "devDependencies": {
     "gulp": "^4.0.2",
+    "gulp-notify": "^3.2.0",
+    "gulp-plumber": "^1.2.1",
     "gulp-sass": "^4.1.0"
   }
 }
