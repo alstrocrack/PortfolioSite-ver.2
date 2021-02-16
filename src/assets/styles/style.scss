@@ -1,3 +1,15 @@
-h1 {
-    color: blue;
+@import 'modules/color.scss';
+@import 'modules/breakpoint.scss';
+
+// topページのスタイル（dist後は全てのcssファイルをここに集める）
+#main {
+    h1 {
+        color: $color-theme;
+    }
+}
+
+@media screen and (max-width: $breakpoint) {
+    h1{
+        color: pink;
+    }
 }
