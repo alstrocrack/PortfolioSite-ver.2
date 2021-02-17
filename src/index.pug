@@ -6,11 +6,16 @@ html(lang="ja")
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
         title development-gulp-template
         link(rel="stylesheet" href="assets/styles/styles.css")
-        script(type="module" src="assets/js/main.js" defer) 
+        script(type="module" src="assets/js/main.js" defer)
     body
         #top 
             header.p-header 
                 .p-kv
-                    ul.p-kv-images 
-                        li.p-kv-images-item
-                            img(src="images/slide1.jpg", alt="")
+                    .p-kv-slides.swiper-container
+                        .swiper-wrapper
+                            .p-kv-slides-item.swiper-slide
+                                img(src="images/slide1.jpg", alt="")
+                    .p-kv-menu
+                        
+                    .p-kv-title 
+                        h1.p-kv-title-txt Frontend Engineer

@@ -1,1 +1,11 @@
 $breakpoint: 768px;
+
+// psdファイルの横幅
+$pc-base-width: 1600px;
+$pc-base-small-width: 1600px;
+$sp-base-width: 828px;
+
+/// @group media query
+$media-sp: 'only screen and (max-width: #{$breakpoint - 1px})';
+/// @group media query
+$media-pc: 'only screen and (min-width: #{$breakpoint})';

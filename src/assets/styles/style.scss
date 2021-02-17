@@ -1,16 +1,47 @@
 @import 'modules/color.scss';
 @import 'modules/breakpoint.scss';
+@import 'modules/size.scss';
 
 // topページのスタイル（dist後は全てのcssファイルをここに集める）
 #top {
-    .p-kv {
-        &-images {
-            &-item {
-                width: 100vw;
-                height: 100vh;
-                & > img {
+    .p-header {
+        .p-kv {
+            position: relative;
+            &-slides {
+                .swiper-wrapper {
+                    width: 100vw;
+                    height: 100vh;
+                }
+                &-item {
                     width: 100%;
                     height: 100%;
+                    & > img {
+                        width: 100%;
+                        height: 100%;
+                    }
+                }
+            }
+            &-title {
+                position: absolute;
+                @include media-pc{
+                    top: size-responsive-pc(403);
+                    left: size-responsive-pc(100);
+                }
+                @include media-sp{
+                    top: size-responsive-sp(16);
+                    left: size-responsive-sp(16);
+                }
+                &-txt {
+                    font-weight: 600;
+                    color: #fff;
+                    @include media-pc{
+                        top: size-responsive-pc(0);
+                        left: size-responsive-pc(0);
+                        font-size: size-responsive-pc(40);
+                    }
+                    @include media-sp{
+                        font-size: size-responsive-sp(16);
+                    }
                 }
             }
         }
