@@ -1,6 +1,7 @@
 @import 'modules/color.scss';
 @import 'modules/breakpoint.scss';
 @import 'modules/size.scss';
+@import 'modules/project.scss';
 
 // topページのスタイル（dist後は全てのcssファイルをここに集める）
 #top {
@@ -24,8 +25,8 @@
             &-title {
                 position: absolute;
                 @include media-pc{
-                    top: size-responsive-pc(403);
-                    left: size-responsive-pc(100);
+                    top: size-responsive-pc(375);
+                    left: size-responsive-pc(92);
                 }
                 @include media-sp{
                     top: size-responsive-sp(16);
@@ -35,12 +36,178 @@
                     font-weight: 600;
                     color: #fff;
                     @include media-pc{
-                        top: size-responsive-pc(0);
-                        left: size-responsive-pc(0);
-                        font-size: size-responsive-pc(40);
+                        font-size: size-responsive-pc(66);
+                        letter-spacing: 0.1em;
+                    }
+                    @include media-sp{
+                        font-size: size-responsive-sp(50);
+                    }
+                }
+            }
+            &-menu {
+                position: absolute;
+                @include media-pc{
+                    top: size-responsive-pc(17);
+                    right: size-responsive-pc(92);
+                }
+                @include media-sp{
+                    top: size-responsive-sp(16);
+                    left: size-responsive-sp(16);
+                }
+                &-list {
+                    @include media-pc{
+                        display: flex;
+                    }
+                    @include media-sp{
+                        //
+                    }
+                }
+                &-item {
+                    @include media-pc{
+                        &:not(:last-child) {
+                            margin-right: size-responsive-pc(38);
+                        }
+                    }
+                    @include media-sp{
+                        top: size-responsive-sp(16);
+                    }
+                }
+                &-link {
+                    color: $basic-font;
+                    text-decoration: none;
+                    @include media-pc{
+                        font-size: size-responsive-pc(42);
+                        letter-spacing: 0.1em;
                     }
                     @include media-sp{
                         font-size: size-responsive-sp(16);
+                    }
+                }
+            }
+        }
+    }
+    main {
+        .p-sns {
+            @include content-width;
+            display: flex;
+            @include media-pc{
+                margin-top: size-responsive-pc(105);
+            }
+            @include media-sp{
+                margin-top: size-responsive-sp(16);
+            }
+            &-title {
+                @include media-pc{
+                    width: size-responsive-pc(280);
+                }
+                @include media-sp{
+                    width: size-responsive-sp(16);
+                }
+                &-txt {
+                    @include media-pc{
+                        font-size: size-responsive-pc(70);
+                        letter-spacing: 0.1em;
+                    }
+                    @include media-sp{
+                        font-size: size-responsive-sp(16);
+                    }
+                }
+            }
+            &-content {
+                //
+            }
+            &-list {
+                display: flex;
+                flex-wrap: wrap;
+            }
+            &-item {
+                display: flex;
+                align-items: center;
+                @include media-pc{
+                    width: size-responsive-pc(540);
+                    height: size-responsive-pc(200);
+                    padding-left: size-responsive-pc(30);
+                }
+                @include media-sp{
+                    width: size-responsive-sp(540);
+                    height: size-responsive-sp(540);
+                }
+                &:not(:first-child, :nth-child(2)) {
+                    @include media-pc{
+                        margin-top: size-responsive-pc(40);
+                    }
+                    @include media-sp{
+                        margin-top: size-responsive-sp(40);
+                    }
+                }
+                &:nth-child(even) {
+                    @include media-pc{
+                        margin-left: size-responsive-pc(40);
+                    }
+                    @include media-sp{
+                        margin-left: size-responsive-sp(40);
+                    }
+                }
+                &:first-child {
+                    background: $twitter-color;
+                }
+                &:nth-child(2) {
+                    background: $instagram-color;
+                }
+                &:nth-child(3) {
+                    background: $qiita-color;
+                }
+                &:nth-child(4) {
+                    background: $pinterest-color;
+                }
+                &:nth-child(5) {
+                    background: $facebook-color;
+                }
+                &:nth-child(6) {
+                    background: $wantedly-color;
+                }
+                &-circle {
+                    background-color: #fff;
+                    border-radius: 50%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    @include media-pc{
+                        width: size-responsive-pc(150);
+                        height: size-responsive-pc(150);
+                    }
+                    @include media-sp{
+                        width: size-responsive-sp(540);
+                        height: size-responsive-sp(540);
+                    }
+                    &-icon {
+                        //
+                    }
+                }
+                &-txt {
+                    color: $basic-font;
+                    @include media-pc{
+                        font-size: size-responsive-pc(68);
+                        margin-left: size-responsive-pc(30);
+                        letter-spacing: 0.1em;
+                    }
+                    @include media-sp{
+                        font-size: size-responsive-sp(540);
+                        margin-left: size-responsive-sp(540);
+                    }
+                }
+                &.instagram,
+                &.pinterest,
+                &.facebook,
+                &.wantedly {
+                    .p-sns-item-txt {
+                        @include media-pc{
+                            font-size: size-responsive-pc(57);
+                        }
+                        @include media-sp{
+                            font-size: size-responsive-sp(540);
+                            margin-left: size-responsive-sp(540);
+                        }
                     }
                 }
             }

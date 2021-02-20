@@ -1,0 +1,11 @@
+@import 'size.scss';
+
+@mixin content-width {
+    @include media-pc{
+        width: size-responsive-pc(1400);
+        margin: 0 auto;
+    }
+    @include media-sp{
+        margin: 0 size-responsive-sp(50);
+    }
+}
