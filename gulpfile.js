@@ -12,6 +12,7 @@ const paths = {
     root: 'src/',
     dist: 'dist/',
     pug: 'src/**/*.pug',
+    assetsPug: 'src/assets/**/*.pug',
     html: 'dist/',
     sass: 'src/assets/styles/**/*.scss',
     css: 'dist/assets/styles/',
@@ -21,7 +22,7 @@ const paths = {
 
 // pug
 const Pug = (done) => {
-    return src(paths.pug)
+    return src([paths.pug, '!' + paths.assetsPug])
         .pipe(
         plumber({ errorHandler: notify.onError('Error: <%= error.message %>') })
         )
@@ -76,7 +77,7 @@ const Reload = (done) => {
 
 // npx gulpでの操作
 exports.default = () => {
-    watch(paths.pug, series(Pug, Reload));
+    watch([paths.pug, paths.assetsPug], series(Pug, Reload));
     watch(paths.sass, series(Sass, Reload));
     watch(paths.srcJs, series(Js, Reload));
     BrowserSync();

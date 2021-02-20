@@ -7,6 +7,8 @@ html(lang="ja")
         title development-gulp-template
         link(rel="stylesheet" href="assets/styles/styles.css")
         script(type="module" src="assets/js/main.js" defer)
+        //- 以下、include系統
+        include /assets/pug/CSectionTitle.pug
     body
         #top 
             header.p-header 
@@ -29,8 +31,7 @@ html(lang="ja")
                         h1.p-kv-title-txt Frontend Engineer
             main
                 section.p-sns
-                    .p-sns-title 
-                        h2.p-sns-title-txt SNS
+                    +CSectionTitle('SNS')
                     .p-sns-content
                         ul.p-sns-list 
                             li.p-sns-item.twitter
