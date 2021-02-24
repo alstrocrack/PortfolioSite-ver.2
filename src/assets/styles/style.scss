@@ -113,9 +113,8 @@
                     }
                 }
             }
-            &-content {
-                //
-            }
+            // &-content {
+            // }
             &-list {
                 display: flex;
                 flex-wrap: wrap;
@@ -180,9 +179,8 @@
                         width: size-responsive-sp(540);
                         height: size-responsive-sp(540);
                     }
-                    &-icon {
-                        //
-                    }
+                    // &-icon {
+                    // }
                 }
                 &-txt {
                     color: $basic-font;
