@@ -96,25 +96,14 @@
             @include media-sp{
                 margin-top: size-responsive-sp(16);
             }
-            &-title {
+            &-content {
                 @include media-pc{
-                    width: size-responsive-pc(280);
+                    width: size-responsive-pc(1120);
                 }
                 @include media-sp{
                     width: size-responsive-sp(16);
                 }
-                &-txt {
-                    @include media-pc{
-                        font-size: size-responsive-pc(70);
-                        letter-spacing: 0.1em;
-                    }
-                    @include media-sp{
-                        font-size: size-responsive-sp(16);
-                    }
-                }
             }
-            // &-content {
-            // }
             &-list {
                 display: flex;
                 flex-wrap: wrap;
@@ -131,7 +120,7 @@
                     width: size-responsive-sp(540);
                     height: size-responsive-sp(540);
                 }
-                &:not(:first-child, :nth-child(2)) {
+                &:not(:first-child):not(:nth-child(2)) {
                     @include media-pc{
                         margin-top: size-responsive-pc(40);
                     }
@@ -208,6 +197,95 @@
                         }
                     }
                 }
+            }
+        }
+        .p-works {
+            @include content-width;
+            display: flex;
+            justify-content: space-between;
+            @include media-pc{
+                margin-top: size-responsive-pc(105);
+            }
+            @include media-sp{
+                margin-top: size-responsive-sp(16);
+            }
+            &-content {
+                @include media-pc{
+                    width: size-responsive-pc(1120);
+                }
+                @include media-sp{
+                    width: size-responsive-sp(16);
+                }
+            }
+            &-list {
+                display: flex;
+                flex-wrap: wrap;
+            }
+            &-item {
+                &:not(:nth-child(2n)) {
+                    @include media-pc{
+                        margin-right: size-responsive-pc(40);
+                    }
+                    @include media-sp{
+                        margin-right: size-responsive-sp(16);
+                    }
+                }
+                &:not(:first-child):not(:nth-child(2)) {
+                    @include media-pc{
+                        margin-top: size-responsive-pc(50);
+                    }
+                    @include media-sp{
+                        margin-top: size-responsive-sp(16);
+                    }
+                }
+            }
+            &-image {
+                @include media-pc{
+                    width: size-responsive-pc(540);
+                    height: size-responsive-pc(420);
+                }
+                @include media-sp{
+                    width: size-responsive-sp(16);
+                    height: size-responsive-sp(16);
+                }
+                & > img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+            }
+        }
+        .p-vision {
+            @include content-width;
+            display: flex;
+            justify-content: space-between;
+            @include media-pc{
+                margin-top: size-responsive-pc(105);
+            }
+            @include media-sp{
+                margin-top: size-responsive-sp(16);
+            }
+            &-content {
+                @include media-pc{
+                    width: size-responsive-pc(1120);
+                }
+                @include media-sp{
+                    width: size-responsive-sp(16);
+                }
+            }
+            &-txt {
+                @include media-pc{
+                    font-size: size-responsive-pc(25);
+                    line-height: 2;
+                    letter-spacing: 0.08em;
+                }
+                @include media-sp{
+                    font-size: size-responsive-sp(16);
+                }
+            }
+            &-wrap {
+                display: flex;
+                // justify-content: space-between;
             }
         }
     }
