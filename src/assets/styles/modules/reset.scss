@@ -12,3 +12,20 @@ h1, h2, h3, h4, h5, h6, p, a{
     font-family:"Yu Gothic", "游ゴシック", YuGothic, "游ゴシック体", "ヒラギノ角ゴ Pro W3", "メイリオ", sans-serif;
     font-weight: 400;
 }
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+dl {
+    margin-block-start: 0;
+    margin-block-end: 0;
+    margin-inline-start: 0;
+    margin-inline-end: 0;
+}
+
+dd, dt {
+    margin-inline-start: 0;
+    margin-inline-end: 0;
+}

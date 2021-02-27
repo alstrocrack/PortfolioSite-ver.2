@@ -29,7 +29,7 @@ html(lang="ja")
                                 a.p-kv-menu-link(href="#") CONTACT
                     .p-kv-title 
                         h1.p-kv-title-txt Frontend Engineer
-            main
+            main.p-main
                 section.p-sns
                     +CSectionTitle('SNS')
                     .p-sns-content
@@ -100,7 +100,55 @@ html(lang="ja")
                             br
                             | プログラミング言語としてはJavaScriptが一番好き。
                         .p-vision-wrap 
-                            .p-vision-item 
+                            .p-vision-item.-left 
                                 img(src="assets/img/vision-image1.jpg", alt="")
-                            .p-vision-item 
+                            .p-vision-item.-right
                                 img(src="assets/img/vision-image2.jpg", alt="")
+                section.p-contact
+                    +CSectionTitle('CONTACT')
+                    .p-contact-content
+                        p.p-contact-txt
+                            | お問い合わせはこちらから。項目は全て必須です。
+                            br
+                            | 返信する必要があれば返信します。
+                        form(action="#", method="post" class="p-contact-form" id="contact-form")
+
+                            //- 名前
+                            dl.p-contact-item.name
+                                dt.p-contact-left 
+                                    label(for="input_name" class="p-contact-left-title") NAME
+                                dd.p-contact-right 
+                                    input(type="text" name="input_name" id="input_name" placeholder="山田 太郎")
+
+                            //- メールアドレス
+                            dl.p-contact-item.mail
+                                dt.p-contact-left 
+                                    label(for="input_mail" class="p-contact-left-title") MAIL
+                                dd.p-contact-right 
+                                    input(type="email" name="input_mail" id="input_mail" placeholder="xxx@example.com")
+
+                            //- お問い合わせ内容
+                            dl.p-contact-item.content
+                                dt.p-contact-left 
+                                    label(for="input_content" class="p-contact-left-title") CONTENT
+                                dd.p-contact-right 
+                                    textarea(name="input_content" id="input_content" placeholder="お問い合わせ内容を記入ください")
+                            
+                            .p-contact-button
+                                button(id="confirm-button" type="submit") CONFIRM
+            footer.p-footer
+                .p-footer-inner
+                    h3.p-footer-title Yuto Urushima
+                    ul.p-footer-menu
+                        li.p-footer-menu-item
+                            a(href="#").p-footer-menu-link SNS 
+                        li.p-footer-menu-item
+                            a(href="#").p-footer-menu-link WORKS
+                        li.p-footer-menu-item
+                            a(href="#").p-footer-menu-link VISION 
+                        li.p-footer-menu-item
+                            a(href="#").p-footer-menu-link CONTACT
+                    .p-footer-top
+                        a(href="#").p-footer-top-link
+                            p.p-footer-top-txt to TOP
+                p.p-footer-copyright © 2021 Yuto Urushima All Rights Reserved.

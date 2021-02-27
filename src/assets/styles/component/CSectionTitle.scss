@@ -14,7 +14,7 @@
     }
     &-txt {
         @include media-pc{
-            font-size: size-responsive-pc(60);
+            font-size: size-responsive-pc(45);
             letter-spacing: 0.1em;
         }
         @include media-sp{
