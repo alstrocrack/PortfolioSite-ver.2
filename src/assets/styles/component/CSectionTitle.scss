@@ -3,7 +3,7 @@
 .c-section-title {
     @include media-pc{
         width: size-responsive-pc(280);
-        margin-top: size-responsive-pc(-20);
+        margin-top: size-responsive-pc(-6);
     }
     @include media-sp{
         width: size-responsive-sp(16);
