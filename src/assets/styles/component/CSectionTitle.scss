@@ -6,7 +6,6 @@
         margin-top: size-responsive-pc(-6);
     }
     @include media-sp{
-        width: size-responsive-sp(16);
         margin-top: size-responsive-sp(16);
     }
     &-inner {

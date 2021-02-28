@@ -1,11 +1,17 @@
 @import 'size.scss';
 
-@mixin content-width {
+@mixin content-width($viewport: normal) {
     @include media-pc{
         width: size-responsive-pc(1400);
         margin: 0 auto;
     }
-    @include media-sp{
-        margin: 0 size-responsive-sp(50);
+    @if $viewport == normal {
+        @include media-sp{
+            margin: 0 size-responsive-sp(50);
+        }
+    } @else if $viewport == wide {
+        @include media-sp{
+            width: 100%;
+        }
     }
 }

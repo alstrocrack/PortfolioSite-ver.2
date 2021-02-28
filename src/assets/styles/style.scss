@@ -11,8 +11,14 @@
             position: relative;
             &-slides {
                 .swiper-wrapper {
-                    width: 100vw;
-                    height: 100vh;
+                    @include media-pc{
+                        width: 100vw;
+                        height: 100vh;
+                    }
+                    @include media-sp{
+                        width: 100%;
+                        height: size-responsive-sp(515);
+                    }
                 }
                 &-item {
                     position: absolute;
@@ -28,43 +34,42 @@
             }
             &-title {
                 position: absolute;
+                white-space: nowrap;
                 @include media-pc{
                     top: size-responsive-pc(382);
                     left: size-responsive-pc(97);
                     letter-spacing: 0.1em;
                 }
                 @include media-sp{
-                    top: size-responsive-sp(16);
-                    left: size-responsive-sp(16);
+                    top: 49%;
+                    left: 50%;
+                    transform: translateX(-50%);
                 }
                 &-txt {
                     font-weight: 600;
                     color: #fff;
+                    letter-spacing: 0.1em;
                     @include media-pc{
                         font-size: size-responsive-pc(66);
-                        letter-spacing: 0.1em;
                     }
                     @include media-sp{
-                        font-size: size-responsive-sp(50);
+                        font-size: size-responsive-sp(65);
                     }
                 }
             }
             &-menu {
                 position: absolute;
                 @include media-pc{
+                    display: block;
                     top: size-responsive-pc(17);
                     right: size-responsive-pc(95);
                 }
                 @include media-sp{
-                    top: size-responsive-sp(16);
-                    left: size-responsive-sp(16);
+                    display: none;
                 }
                 &-list {
                     @include media-pc{
                         display: flex;
-                    }
-                    @include media-sp{
-                        //
                     }
                 }
                 &-item {
@@ -93,9 +98,9 @@
     }
     .p-main {
         .p-sns {
-            @include content-width;
-            display: flex;
+            @include content-width($viewport: wide);
             @include media-pc{
+                display: flex;
                 margin-top: size-responsive-pc(105);
             }
             @include media-sp{
@@ -106,28 +111,27 @@
                     width: size-responsive-pc(1120);
                 }
                 @include media-sp{
-                    width: size-responsive-sp(16);
+                    width: 100%;
                 }
             }
             &-list {
-                display: flex;
-                flex-wrap: wrap;
+                @include media-pc{
+                    display: flex;
+                    flex-wrap: wrap;
+                }
+                @include media-sp{
+                    display: block;
+                }
             }
             &-item {
                 &:not(:first-child):not(:nth-child(2)) {
                     @include media-pc{
                         margin-top: size-responsive-pc(40);
                     }
-                    @include media-sp{
-                        margin-top: size-responsive-sp(40);
-                    }
                 }
                 &:nth-child(even) {
                     @include media-pc{
                         margin-left: size-responsive-pc(40);
-                    }
-                    @include media-sp{
-                        margin-left: size-responsive-sp(40);
                     }
                 }
                 &:first-child {
@@ -157,8 +161,8 @@
                         padding-left: size-responsive-pc(30);
                     }
                     @include media-sp{
-                        width: size-responsive-sp(540);
-                        height: size-responsive-sp(540);
+                        width: 100%;
+                        height: size-responsive-sp(170);
                     }
                 }
                 &-circle {
@@ -172,8 +176,8 @@
                         height: size-responsive-pc(150);
                     }
                     @include media-sp{
-                        width: size-responsive-sp(540);
-                        height: size-responsive-sp(540);
+                        width: size-responsive-sp(125);
+                        height: size-responsive-sp(125);
                     }
                     // &-icon {
                     // }
@@ -186,8 +190,8 @@
                         letter-spacing: 0.1em;
                     }
                     @include media-sp{
-                        font-size: size-responsive-sp(540);
-                        margin-left: size-responsive-sp(540);
+                        font-size: size-responsive-sp(55);
+                        margin-left: size-responsive-sp(40);
                     }
                 }
                 &.instagram,
@@ -198,22 +202,19 @@
                         @include media-pc{
                             font-size: size-responsive-pc(57);
                         }
-                        @include media-sp{
-                            font-size: size-responsive-sp(540);
-                            margin-left: size-responsive-sp(540);
-                        }
                     }
                 }
             }
         }
         .p-works {
             @include content-width;
-            display: flex;
-            justify-content: space-between;
             @include media-pc{
+                display: flex;
+                justify-content: space-between;
                 margin-top: size-responsive-pc(142);
             }
             @include media-sp{
+                display: block;
                 margin-top: size-responsive-sp(16);
             }
             &-content {
@@ -221,28 +222,27 @@
                     width: size-responsive-pc(1120);
                 }
                 @include media-sp{
-                    width: size-responsive-sp(16);
+                    width: 100%;
                 }
             }
             &-list {
-                display: flex;
-                flex-wrap: wrap;
+                @include media-pc{
+                    display: flex;
+                    flex-wrap: wrap;
+                }
+                @include media-sp{
+                    display: block;
+                }
             }
             &-item {
                 &:not(:nth-child(2n)) {
                     @include media-pc{
                         margin-right: size-responsive-pc(40);
                     }
-                    @include media-sp{
-                        margin-right: size-responsive-sp(16);
-                    }
                 }
                 &:not(:first-child):not(:nth-child(2)) {
                     @include media-pc{
                         margin-top: size-responsive-pc(50);
-                    }
-                    @include media-sp{
-                        margin-top: size-responsive-sp(16);
                     }
                 }
             }
@@ -252,8 +252,8 @@
                     height: size-responsive-pc(420);
                 }
                 @include media-sp{
-                    width: size-responsive-sp(16);
-                    height: size-responsive-sp(16);
+                    width: 100%;
+                    height: size-responsive-sp(420);
                 }
                 & > img {
                     width: 100%;
@@ -264,12 +264,13 @@
         }
         .p-vision {
             @include content-width;
-            display: flex;
-            justify-content: space-between;
             @include media-pc{
+                display: flex;
+                justify-content: space-between;
                 margin-top: size-responsive-pc(182);
             }
             @include media-sp{
+                display: block;
                 margin-top: size-responsive-sp(16);
             }
             &-content {
@@ -277,7 +278,7 @@
                     width: size-responsive-pc(1120);
                 }
                 @include media-sp{
-                    width: size-responsive-sp(16);
+                    width: 100%;
                 }
             }
             &-txt {
@@ -303,11 +304,12 @@
             &-item {
                 &.-left {
                     @include media-pc{
+                        display: block;
                         width: size-responsive-pc(320);
                         height: size-responsive-pc(320);
                     }
                     @include media-sp{
-                        width: size-responsive-sp(16);
+                        display: none;
                     }
                     & > img {
                         width: 100%;
@@ -321,7 +323,7 @@
                         height: size-responsive-pc(320);
                     }
                     @include media-sp{
-                        width: size-responsive-sp(16);
+                        width: 100%;
                     }
                     & > img {
                         width: 100%;
@@ -333,9 +335,9 @@
         }
         .p-contact {
             @include content-width;
-            display: flex;
-            justify-content: space-between;
             @include media-pc{
+                display: flex;
+                justify-content: space-between;
                 margin-top: size-responsive-pc(170);
             }
             @include media-sp{
@@ -346,7 +348,7 @@
                     width: size-responsive-pc(1120);
                 }
                 @include media-sp{
-                    width: size-responsive-sp(16);
+                    width: 100%;
                 }
             }
             &-txt {
@@ -362,8 +364,13 @@
                 }
             }
             &-item {
-                display: flex;
-                align-items: center;
+                @include media-pc{
+                    display: flex;
+                    align-items: center;
+                }
+                @include media-sp{
+                    display: block;
+                }
                 &:not(:last-of-type) {
                     @include media-pc{
                         margin-bottom: size-responsive-pc(40);
@@ -386,9 +393,6 @@
             &-left {
                 @include media-pc{
                     width: size-responsive-pc(270);
-                }
-                @include media-sp{
-                    width: size-responsive-sp(16);
                 }
                 &-title {
                     @include media-pc{
@@ -419,8 +423,8 @@
                         height: size-responsive-pc(95);
                     }
                     @include media-sp{
-                        width: size-responsive-sp(16);
-                        height: size-responsive-sp(16);
+                        width: 100%;
+                        height: size-responsive-sp(90);
                     }
                 }
                 & > textarea {
@@ -430,8 +434,8 @@
                         height: size-responsive-pc(300);
                     }
                     @include media-sp{
-                        width: size-responsive-sp(16);
-                        height: size-responsive-sp(16);
+                        width: 100%;
+                        height: size-responsive-sp(365);
                     }
                 }
             }
@@ -441,7 +445,6 @@
                     margin-top: size-responsive-pc(60);
                 }
                 @include media-sp{
-                    margin-left: size-responsive-sp(16);
                     margin-top: size-responsive-sp(16);
                 }
                 & > button {
@@ -460,8 +463,8 @@
                     }
                     @include media-sp{
                         font-size: size-responsive-sp(16);
-                        width: size-responsive-sp(16);
-                        height: size-responsive-sp(16);
+                        width: 100%;
+                        height: size-responsive-sp(90);
                     }
                 }
             }
@@ -479,9 +482,14 @@
         }
         &-inner {
             @include content-width;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
+            @include media-pc{
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+            }
+            @include media-sp{
+                display: block;
+            }
         }
         &-title {
             font-weight: 600;
@@ -494,14 +502,16 @@
             }
         }
         &-menu {
-            display: flex;
+            @include media-pc{
+                display: flex;
+            }
+            @include media-sp{
+                display: none;
+            }
             &-item {
                 &:not(:last-of-type) {
                     @include media-pc{
                         margin-right: size-responsive-pc(43);
-                    }
-                    @include media-sp{
-                        margin-right: size-responsive-sp(16);
                     }
                 }
             }
@@ -510,24 +520,21 @@
                     font-size: size-responsive-pc(33);
                     letter-spacing: 0.1em;
                 }
-                @include media-sp{
-                    font-size: size-responsive-sp(16);
-                }
             }
         }
         &-top {
             background-color: #000000;
-            border-radius: 50%;
             display: flex;
             justify-content: center;
             align-items: center;
             @include media-pc{
+                border-radius: 50%;
                 width: size-responsive-pc(170);
                 height: size-responsive-pc(170);
             }
             @include media-sp{
-                width: size-responsive-sp(16);
-                height: size-responsive-sp(16);
+                width: 100%;
+                height: size-responsive-sp(75);
             }
             &-txt {
                 color: #fff;
