@@ -124,6 +124,10 @@
                 }
             }
             &-item {
+                @include media-sp {
+                    padding-left: size-responsive-sp(50);
+                    padding-right: size-responsive-sp(50);
+                }
                 &:not(:first-child):not(:nth-child(2)) {
                     @include media-pc{
                         margin-top: size-responsive-pc(40);
@@ -132,6 +136,19 @@
                 &:nth-child(even) {
                     @include media-pc{
                         margin-left: size-responsive-pc(40);
+                    }
+                    @include media-sp{
+                        .p-sns-item-circle {
+                            order: 2;
+                        }
+                        .p-sns-item-txt {
+                            order: 1;
+                            margin-left: 0;
+                            margin-right: size-responsive-sp(50);
+                        }
+                        .p-sns-item-link {
+                            justify-content: flex-end;
+                        }
                     }
                 }
                 &:first-child {
@@ -162,7 +179,7 @@
                     }
                     @include media-sp{
                         width: 100%;
-                        height: size-responsive-sp(170);
+                        height: size-responsive-sp(186);
                     }
                 }
                 &-circle {
@@ -179,8 +196,17 @@
                         width: size-responsive-sp(125);
                         height: size-responsive-sp(125);
                     }
-                    // &-icon {
-                    // }
+                    &-icon {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        & > img {
+                            @include media-sp{
+                                width: size-responsive-sp(70);
+                                height: size-responsive-sp(70);
+                            }
+                        }
+                    }
                 }
                 &-txt {
                     color: $basic-font;
