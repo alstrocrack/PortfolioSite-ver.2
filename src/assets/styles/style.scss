@@ -287,6 +287,25 @@
                     object-fit: cover;
                 }
             }
+            &-desc {
+                @include media-pc{
+                    display: none;
+                }
+                @include media-sp{
+                    display: block;
+                }
+            }
+            &-topWrap {
+                display: flex;
+            }
+            &-title {
+                @include media-sp{
+                    margin-right: size-responsive-sp(16);
+                }
+            }
+            &-category {
+                border: 1px solid #000;
+            }
         }
         .p-vision {
             @include content-width;
