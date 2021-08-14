@@ -1,6 +1,6 @@
-# development-gulp-template
+# PortfolioSite-ver.2
 
-"development-gulp-template" is a Portfolio Website.
+"PortfolioSite-ver.2" is a Portfolio Website.
 
 # Requirement
 
