@@ -1,34 +1,34 @@
-@import '../modules/size.scss';
+@import "../modules/size.scss";
 
 .c-section-title {
-    @include media-pc{
-        width: size-responsive-pc(280);
-        margin-top: size-responsive-pc(-6);
+  @include media-pc {
+    width: size-responsive-pc(280);
+    margin-top: size-responsive-pc(-6);
+  }
+  @include media-sp {
+    margin-top: size-responsive-sp(16);
+  }
+  &-inner {
+    display: inline-block;
+  }
+  &-txt {
+    @include media-pc {
+      font-size: size-responsive-pc(45);
+      letter-spacing: 0.1em;
     }
-    @include media-sp{
-        margin-top: size-responsive-sp(16);
+    @include media-sp {
+      font-size: size-responsive-sp(16);
     }
-    &-inner {
-        display: inline-block;
+  }
+  &-border {
+    height: 1px;
+    width: 100%;
+    background-color: #000;
+    @include media-pc {
+      margin-top: size-responsive-pc(-20);
     }
-    &-txt {
-        @include media-pc{
-            font-size: size-responsive-pc(45);
-            letter-spacing: 0.1em;
-        }
-        @include media-sp{
-            font-size: size-responsive-sp(16);
-        }
+    @include media-sp {
+      margin-top: size-responsive-sp(16);
     }
-    &-border {
-        height: 1px;
-        width: 100%;
-        background-color: #000;
-        @include media-pc{
-            margin-top: size-responsive-pc(-20);
-        }
-        @include media-sp{
-            margin-top: size-responsive-sp(16);
-        }
-    }
+  }
 }

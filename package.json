@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "npx gulp"
+    "dev": "npx gulp",
+    "lint:css": "stylelint **/*.{css,scss,sass}"
   },
   "repository": {
     "type": "git",
@@ -20,6 +21,7 @@
   "homepage": "https://github.com/YutoUrushima/development-gulp-template#readme",
   "devDependencies": {
     "browser-sync": "^2.26.14",
+    "eslint": "^7.32.0",
     "gulp": "^4.0.2",
     "gulp-concat-css": "^3.1.0",
     "gulp-imagemin": "^7.1.0",
@@ -31,6 +33,8 @@
     "imagemin-pngquant": "^9.0.1"
   },
   "dependencies": {
-    "swiper": "^6.4.12"
+    "stylelint": "^13.13.1",
+    "stylelint-config-recommended": "^5.0.0",
+    "swiper": "^6.8.1"
   }
 }

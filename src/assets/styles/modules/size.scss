@@ -1,25 +1,25 @@
-@import 'breakpoint.scss';
+@import "breakpoint.scss";
 
 // サイズ
 /// @group media query
-@mixin media-pc{
-    @media #{$media-pc}{
-        @content;
-    }
+@mixin media-pc {
+  @media #{$media-pc} {
+    @content;
+  }
 }
 /// @group media query
-@mixin media-sp{
-    @media #{$media-sp}{
-        @content;
-    }
+@mixin media-sp {
+  @media #{$media-sp} {
+    @content;
+  }
 }
 
 // 単位の削除
 @function strip-unit($number) {
-    @if type-of($number) == 'number' and not unitless($number) {
-        @return $number / ($number * 0 + 1);
-    }
-    @return $number;
+  @if type-of($number) == "number" and not unitless($number) {
+    @return $number / ($number * 0 + 1);
+  }
+  @return $number;
 }
 
 //or
@@ -36,20 +36,20 @@
 /// @group size
 // 標準的なPCサイズ
 @function size-responsive-pc($size) {
-    @return strip-unit($size) / strip-unit($pc-base-width) * 100vw;
+  @return strip-unit($size) / strip-unit($pc-base-width) * 100vw;
 }
 /// @group size
 // やや小さめなPCサイズ
 @function size-responsive-pc-s($size) {
-    @return strip-unit($size) / strip-unit($pc-base-small-width) * 100vw;
+  @return strip-unit($size) / strip-unit($pc-base-small-width) * 100vw;
 }
 /// @group size
 // やや大きめなPCサイズ
 @function size-responsive-pc-l($size) {
-    @return $size * 1.25px;
+  @return $size * 1.25px;
 }
 /// @group size
 // 標準的なSPサイズ
 @function size-responsive-sp($size) {
-    @return strip-unit($size) / strip-unit($sp-base-width) * 100vw;
+  @return strip-unit($size) / strip-unit($sp-base-width) * 100vw;
 }
